@@ -1,0 +1,11 @@
+<launch>
+    <!--<group ns="publisher">
+        <node pkg="p1" name="publisher" type="pnode2.py"/>
+    </group>
+    <group ns="listener">
+        <node pkg="p1" name="listener" type="p1_cnode2" args="$(find p1)"/>
+    </group>-->
+    <arg name="init_base" default="1"/>
+    <node pkg="p1" name="publisher" type="pnode2.py" args="$(find p1) $(arg init_base)" output="screen"/>
+    <node pkg="p1" name="listener" type="p1_cnode2" args="$(find p1)" output="screen"/>
+</launch>

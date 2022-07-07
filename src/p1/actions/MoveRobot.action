@@ -1,0 +1,8 @@
+# Define the goal
+int8 goal_id  # we will only send goal ids to the server who will then figure out the goal details
+----
+# define the result
+geometry_msgs/PoseStamped pose # sent to client just once after action execution.
+---
+# define a feedback message
+int16 status # provides incremental status report of the progress of the action
