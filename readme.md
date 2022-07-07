@@ -125,7 +125,7 @@ rosmsg show p1/MoveRobotAction.msg
 
 #### Client
 The client and the server are quite straightforward. Examples are in the code. I only ran into a problem when running 
-`catkin_make`. I was having issues with `rosrun` there seemed to be a problem with the `source`ing.
+`catkin_make`. I was having issues with `rosrun` it seemed to stem from the `source`ing.
 
 I eventually used the version below, and everything worked.
 ```
@@ -188,7 +188,7 @@ So I eventually settled for using `/move_base/status`. I subscribed to the topic
 which perform some actions, like note the goal ID and status and update a variable which is used by the method 
 executing a goal. I had a bug which I eventually figured out. Particularly, I had been making a comparison between goal 
 ID and goal status, which never matched up. It made some task never execute particularly tasks after returning to base.
-Third tasks, usually and following. I added a hook for setting the initial pose for the robot for AMCL.
+Third tasks, usually and following. I added a hook for setting the initial pose for the robot for `amcl`.
 
 The initial implementation made it compulsory. But the update I made, made it now optional.
 This was important, because once it has been initialized, it was no good to set it again while `rviz` and `gazebo` 
